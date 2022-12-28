@@ -1,0 +1,97 @@
+.mouse-inactive {
+    cursor: none;
+}
+
+.control-bar-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.control-bar {
+    display: flex;
+    height: 2em;
+    border: none;
+    border-top: 0.1em solid rgba(255, 255, 255, 0.5);
+
+    transition: transform 300ms;
+}
+
+.control-bar button {
+    min-height: auto;
+    height: auto;
+    box-sizing: border-box;
+    border: none;
+    margin: 0.2em;
+    padding: 0;
+}
+
+.control-bar button:focus {
+    outline: 0.1em solid rgba(41, 127, 255, 0.5);
+}
+
+.control-bar button img {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0.2em;
+    pointer-events: none;
+}
+
+.control-bar-container.control-bar-hidden .control-bar {
+    transform: translateY(100%);
+}
+
+.progress-bar {
+    flex-grow: 1;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+.progress-bar:focus {
+    outline: none;
+}
+
+.progress-bar:focus .progress-container {
+    outline: none;
+    border: 0.1em solid rgba(42, 78, 141, 0.5);
+}
+
+.progress-bar .progress-container {
+    pointer-events: none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border: 0.1em solid rgba(120, 120, 120, 0.5);
+}
+
+.progress-bar .progress {
+    --value: 0;
+
+    width: calc(100% * var(--value));
+    height: 100%;
+    background: rgba(41, 127, 255, 0.5);
+}
+
+.loading-status {
+    margin-top: 1em;
+    font-size: 1.5em;
+    color: rgb(165, 165, 165);
+}
+
+.settings {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, 2em);
+    gap: 0.5em 1em;
+    align-items: center;
+    justify-items: stretch;
+
+    font-family: system-ui;
+    padding: 0.5em;
+    background: #1f1f1f;
+    color: white;
+}

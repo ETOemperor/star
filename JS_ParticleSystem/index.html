@@ -1,0 +1,16 @@
+<html lang="en">
+<body></body>
+<script>
+    let url = window.location.origin + window.location.pathname;
+    if (url.endsWith("/")) {
+        url = url.slice(0, url.length - 1);
+    }
+    let hasIndex = url.endsWith("/index.html");
+    if (hasIndex) {
+        url = url.slice(0, url.length - 11);
+    }
+
+    const params = window.location.search;
+    window.location.assign(`${url}/1_body/${hasIndex ? "index.html" : ""}${params}`);
+</script>
+</html>
